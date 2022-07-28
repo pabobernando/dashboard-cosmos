@@ -3,12 +3,13 @@ import Logo from './globe.jpeg';
 import Osmosis from './osmosis.png';
 import Iris from './iris.jpg';
 import Crescent from './crescent.jpg';
-import Icon from './Icons.png';
+import Icon from './tangan.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from 'react';
 import { Button } from 'react-bootstrap';
 import { FaBeer } from 'react-icons/fa';
 import { FaSort } from 'react-icons/fa';
+import { FaAngleDoubleRight } from 'react-icons/fa';
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
             <h5>Balance C</h5>
           </div>
         </div>
-        <div className='row text-white text-center mt-5 border border-info'>
+        <div className='row text-white text-center mt-5 '>
           <div className='col-2'>
             
             <h4 className='mt-5'> <img src={Osmosis} className='rounded-circle' width='50' /> Osmosis</h4>
@@ -99,13 +100,33 @@ function App() {
           <img src={Logo} width="500"/>
           </div>
         </div>
-        <div className='row background-bottom'>
+        <div className='row border border-info mt-5'>
           <div className='col-6 text-white text-center'>
-          <img src={Icon} width='700' />
+          <img src={Icon} width='400' />
           </div>
           <div className='col-6 text-white'>
-            <h3>IBC </h3>
+            <div className='row mt-5'>
+            <div className='col-5'>
+            <select className='form-select'>
+              <option>Osmosis</option>
+              <option>Gravity Bridge</option>
+              <option>Iris</option>
+              <option>Crescent</option>
+            </select>
+            </div>
+            <div className='col-2 text-center'>
+            <FaAngleDoubleRight size={40}/>
+            </div>
+            <div className='col-5'>
+            <select className='form-select'>
+              <option>Osmosis</option>
+              <option>Gravity Bridge</option>
+              <option>Iris</option>
+              <option>Crescent</option>
+            </select>
+            </div>
           </div>
+            </div>
         </div>
       </div>
     </div>
