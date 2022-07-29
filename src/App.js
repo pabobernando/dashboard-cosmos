@@ -10,6 +10,7 @@ import { Button } from 'react-bootstrap';
 import { FaBeer } from 'react-icons/fa';
 import { FaSort } from 'react-icons/fa';
 import { FaAngleDoubleRight } from 'react-icons/fa';
+import { FaExchangeAlt } from 'react-icons/fa';
 
 function App() {
 
@@ -50,13 +51,13 @@ function App() {
           <div className='col-2'>
             
             <h4 className='mt-5'> <img src={Osmosis} className='rounded-circle' width='50' /> Osmosis</h4>
-            <select className='mt-5 form-select'>
+            <select className='mt-5 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
             <h4 className='mt-3'><FaSort/></h4>
-            <select className='mt-3 form-select'>
+            <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
@@ -66,29 +67,29 @@ function App() {
           </div>
           <div className='col-2'>
           <h4 className='mt-5'><img src={Iris} className='rounded-circle' width='50' /> Iris</h4>
-          <select className='mt-5 form-select'>
+          <select className='mt-5 form-select bg-black text-white border border-white' >
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
             <h4 className='mt-3'><FaSort/></h4>
-            <select className='mt-3 form-select'>
+            <select className='mt-3 form-select bg-black text-white border border-white'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
             <h4></h4>
-            <Button variant='outline-info'>Swap</Button>
+            <Button variant='outline-light'>Swap</Button>
           </div>
           <div className='col-2'>
           <h4 className='mt-5'><img src={Crescent} className='rounded-circle' width='50' /> Crescent</h4>
-          <select className='mt-5 form-select'>
+          <select className='mt-5 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
             </select>
             <h4 className='mt-3'><FaSort/></h4>
-            <select className='mt-3 form-select'>
+            <select className='mt-3 form-select bg-black text-info border border-info'>
               <option>Iris</option>
               <option>Osmosis</option>
               <option>Gravity</option>
@@ -100,14 +101,14 @@ function App() {
           <img src={Logo} width="500"/>
           </div>
         </div>
-        <div className='row border border-info mt-5'>
+        <div className='row mt-5'>
           <div className='col-6 text-white text-center'>
           <img src={Icon} width='400' />
           </div>
           <div className='col-6 text-white'>
             <div className='row mt-5'>
             <div className='col-5'>
-            <select className='form-select'>
+            <select className='form-select bg-black text-info border border-info'>
               <option>Osmosis</option>
               <option>Gravity Bridge</option>
               <option>Iris</option>
@@ -118,12 +119,49 @@ function App() {
             <FaAngleDoubleRight size={40}/>
             </div>
             <div className='col-5'>
-            <select className='form-select'>
+            <select className='form-select bg-black text-info border border-info'>
               <option>Osmosis</option>
               <option>Gravity Bridge</option>
               <option>Iris</option>
               <option>Crescent</option>
             </select>
+            </div>
+          </div>
+          <div className='row mt-5 text-center'>
+            <div className='col-3 text-white'>
+              <h4>Select a Chain</h4>
+              <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4 className='mt-4'></h4>
+              <FaExchangeAlt size='40'/>
+            </div>
+            <div className='col-3 text-white'>
+              <h4>Select a Chain</h4>
+            <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4>Coin</h4>
+            <select className='form-select bg-black text-white border border-white'>
+                <option>Osmosis</option>
+                <option>Crescent</option>
+                <option>Iris</option>
+                <option>Grav</option>
+              </select>
+            </div>
+            <div className='col-2 text-white'>
+              <h4></h4>
+              <Button variant='outline-info mt-4'>Submit</Button>
             </div>
           </div>
             </div>
