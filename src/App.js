@@ -11,10 +11,25 @@ import { FaBeer } from 'react-icons/fa';
 import { FaSort } from 'react-icons/fa';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { FaExchangeAlt } from 'react-icons/fa';
+import axios from 'axios';
 
 function App() {
 
- 
+  const axios = require('axios').default;
+
+// Make a request for a user with a given ID
+axios.get('http://0.0.0.0:1317/cosmos/bank/v1beta1/balances/cosmos1g7dna0gp4nec5rza4q25htj0cjgswrxe6adac9')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
 
   return (
     <div className="App">
