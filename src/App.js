@@ -5,34 +5,29 @@ import Iris from './iris.jpg';
 import Crescent from './crescent.jpg';
 import Icon from './tangan.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { Button } from 'react-bootstrap';
-import { FaBeer } from 'react-icons/fa';
-import { FaSort } from 'react-icons/fa';
-import { FaAngleDoubleRight } from 'react-icons/fa';
-import { FaExchangeAlt } from 'react-icons/fa';
+import { FaBeer,FaSort,FaAngleDoubleRight,FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 
 function App() {
+const [categories, setCategories] = useState(10)
 
-  const axios = require('axios').default;
+useEffect(() => {
+  retrieveCategories();
+},[]);
 
-// Make a request for a user with a given ID
-axios.get('http://0.0.0.0:1317/cosmos/bank/v1beta1/balances/cosmos1g7dna0gp4nec5rza4q25htj0cjgswrxe6adac9')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+  const retrieveCategories = async () => {
+    try{
+      const {data} = await axios.get('http://0.0.0.0:1317/cosmos/bank/v1beta1/balances/cosmos1g7dna0gp4nec5rza4q25htj0cjgswrxe6adac9')
+      setCategories(data.balances)
+    }catch(error){
+      console.log(error)
+    }
+  }
 
   return (
-    <div className="App">
+    <div className="App"> 
       <div className='container-fluid bg-black'>
         <div className='row '>
           <div className='col-6'>
@@ -45,7 +40,7 @@ axios.get('http://0.0.0.0:1317/cosmos/bank/v1beta1/balances/cosmos1g7dna0gp4nec5
         <div className='row text-white text-center mt-5'>
           <div className='col-4'>
             <h4 className='border border-info'>Osmosis</h4>
-            <h5 className='mt-5'>Balance A</h5>
+            <h5 className='mt-5'>{JSON.stringify(categories)}</h5>
             <h5>Balance B</h5>
             <h5>Balance C</h5>
           </div>
