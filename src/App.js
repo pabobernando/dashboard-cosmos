@@ -11,7 +11,16 @@ import { FaBeer,FaSort,FaAngleDoubleRight,FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 
 function App() {
-const [categories, setCategories] = useState(10)
+const [categories, setCategories] = useState(10);
+ 
+ async function handleClick() {
+  const chainId = "irishub-1"
+  await window.keplr.enable(chainId)
+  const offlineSigner = window.getOfflineSigner(chainId);
+  const accounts = await offlineSigner.getAccounts();
+  console.log(accounts)
+
+ }
 
 useEffect(() => {
   retrieveCategories();
@@ -30,11 +39,11 @@ useEffect(() => {
     <div className="App"> 
       <div className='container-fluid bg-black'>
         <div className='row '>
-          <div className='col-6'>
           <h3 className='text-white'><FaBeer /> Kewr</h3>
+          <div className='col-6'>
           </div>
           <div className='col-6 text-end'>
-          <Button variant='outline-info'>Connect Keplr</Button>
+          <Button onClick={handleClick} variant='outline-info' >Connect Keplr</Button>
           </div>
         </div>
         <div className='row text-white text-center mt-5'>
