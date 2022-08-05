@@ -4,6 +4,7 @@ import Osmosis from './osmosis.png';
 import Iris from './iris.jpg';
 import Crescent from './crescent.jpg';
 import Icon from './tangan.jpg';
+import Keplr from './keplr.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState,useEffect} from 'react';
 import { Button } from 'react-bootstrap';
@@ -11,16 +12,19 @@ import { FaBeer,FaSort,FaAngleDoubleRight,FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 
 function App() {
-const [categories, setCategories] = useState(10);
+const [categories, setCategories] = useState();
+const [address, setAddress] = useState('')
  
+//  keplr
  async function handleClick() {
   const chainId = "irishub-1"
   await window.keplr.enable(chainId)
   const offlineSigner = window.getOfflineSigner(chainId);
   const accounts = await offlineSigner.getAccounts();
-  console.log(accounts)
-
+  setAddress(accounts[0].address)
  }
+// akhir keplr
+
 
 useEffect(() => {
   retrieveCategories();
@@ -43,7 +47,8 @@ useEffect(() => {
           <div className='col-6'>
           </div>
           <div className='col-6 text-end'>
-          <Button onClick={handleClick} variant='outline-info' >Connect Keplr</Button>
+          <Button onClick={handleClick} variant='outline-info' className='text-white' ><img src={Keplr} width='30'/> {address ? address : 'Connect Wallet'}</Button>
+          <h4 className='text-white'></h4>
           </div>
         </div>
         <div className='row text-white text-center mt-5'>
